@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function ScaleWithLine() {
   return (
-    <section className="relative h-screen w-full overflow-hidden [--pattern:var(--color-neutral-300)] bg-grey-200">
+    <section className="relative h-screen w-full overflow-hidden [--pattern:var(--color-neutral-300)] dark:[--pattern:var(--color-neutral-700)] bg-neutral-200 dark:bg-neutral-800">
       {/* Content sits between the frame lines */}
       <div className="max-w-7xl shadow-lg mx-auto w-full h-full flex items-center justify-center relative">
         {/* Frame lines - full viewport width */}
@@ -13,7 +14,7 @@ export default function ScaleWithLine() {
         <VerticalScaleLine className="absolute left-0 h-screen mx-auto" />
         <VerticalScaleLine className="absolute right-0 h-screen mx-auto" />
 
-        <div className="size-full p-14 bg-white/10">
+        <div className="size-full p-14 bg-white/10 dark:bg-black/10">
           <div className="relative p-10 size-full flex flex-col justify-between">
             <img
               src="https://assets.aceternity.com/components/mountains-snow.webp"
@@ -26,18 +27,19 @@ export default function ScaleWithLine() {
                 <h2 className="tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-blue-400 to-blue-800 text-shadow-lg font-bold text-3xl text-shadow-blue-600/10">
                   ClipaAi
                 </h2>
-                <a href="#" className="text-neutral-700 text-xl">
+                <a href="#" className="text-neutral-700 dark:text-neutral-300 text-xl">
                   Features
                 </a>
-                <a href="#" className="text-neutral-700 text-xl">
+                <a href="#" className="text-neutral-700 dark:text-neutral-300 text-xl">
                   About Us
                 </a>
-                <a href="#" className="text-neutral-700 text-xl">
+                <a href="#" className="text-neutral-700 dark:text-neutral-300 text-xl">
                   Pricing
                 </a>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 items-center">
+                <ModeToggle />
                 <Button className="py-2 px-2 bg-linear-to-r from-blue-400 to-blue-800 text-white text-xs">
                   Get Started
                   <ArrowRight />
@@ -52,7 +54,7 @@ export default function ScaleWithLine() {
                 Welcome to ClipaAi
               </h1>
 
-              <p className="mt-4 text-base md:text-lg text-neutral-700 max-w-2xl">
+              <p className="mt-4 text-base md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl">
                 ClipaAi is a platform for creating and sharing AI-powered
                 content.
               </p>
